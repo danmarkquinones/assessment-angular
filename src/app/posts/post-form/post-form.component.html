@@ -1,0 +1,11 @@
+<div class="p-5">
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <input type="hidden" formControlName="id">
+    <input type="hidden" formControlName="userId">
+    <input class="form-control" type="text" formControlName="title">
+    <small class="d-block text-danger" *ngIf="this.postService.postForm.get('title').invalid && this.postService.postForm.get('title').touched">Put a Title First</small>
+    <input class="form-control" type="text" formControlName="body">
+    <small class="d-block text-danger" *ngIf="this.postService.postForm.get('body').invalid && this.postService.postForm.get('body').touched">Put some Content First</small>
+    <button class="btn btn-success" type="submit" [disabled]="!this.postService.postForm.valid" >Add New User</button>
+  </form>
+</div>

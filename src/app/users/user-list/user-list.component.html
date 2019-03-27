@@ -1,0 +1,17 @@
+<div>
+  USER LIST
+  <table class="table table-responsive table-stripeds">
+    <thead>
+      <tr>
+        <td>ID</td>
+        <td>NAME</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users | async ">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

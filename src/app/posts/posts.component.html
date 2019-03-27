@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-lg-5">
+      <table class="table table-responsive">
+          <thead>
+            <tr>
+              <td>Title</td>
+              <td>Body</td>
+              <td>Actions</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let post of posts">
+              <td>{{post.title}}</td>
+              <td>{{post.body}}</td>
+              <!-- {{post|json}} -->
+              <td>
+                <button class="btn btn-primary btn-block " (click)="onEdit(post)">Edit</button>
+                <br>
+                <button class="btn btn-danger btn-block" (click)="onDelete(post)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+  <div class="col-lg 5">
+    <app-post-form (postCreated)="onPostAdded($event)"></app-post-form>
+  </div>
+</div>

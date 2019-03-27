@@ -1,0 +1,14 @@
+<div class="p-5 border">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <input type="hidden" formControlName="id">
+    <input class="form-control mb-1" type="text" formControlName="name">
+    <small class="d-block text-danger mb-1" *ngIf="this.userService.userForm.get('name').invalid && this.userService.userForm.get('name').touched">Kindly put your name</small>
+    <input class="form-control mb-1" type="text" formControlName="username">
+    <small class="d-block text-danger mb-1" *ngIf="this.userService.userForm.get('username').invalid && this.userService.userForm.get('username').touched">Hey? What is your username</small>
+    <input class="form-control mb-1" type="text" formControlName="email">
+    <small class="d-block text-danger mb-1" *ngIf="this.userService.userForm.get('email').invalid && this.userService.userForm.get('email').touched">Please, put a valid email</small>
+    <button class="btn btn-success btn-block" type="submit" [disabled]="!this.userService.userForm.valid" >
+      Submit
+    </button>
+  </form>
+</div>
